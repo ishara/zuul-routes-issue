@@ -1,0 +1,10 @@
+server:
+    port: 8080
+    contextPath: /api-gateway
+zuul:
+  addProxyHeaders: true
+  routes:
+    api:
+      path: /rest-url/**
+      url: http://localhost:9090/rest-api/
+      stripPrefix: true
